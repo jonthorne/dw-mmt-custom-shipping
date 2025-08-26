@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+		<Version>10.13.1</Version>		
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Title>MMT Shipping Helpers</Title>
+    <Description>Dynamicweb BC Shipping helper functions for MMT</Description>
+	</PropertyGroup>
+  <PropertyGroup>
+		<PackageProjectUrl>https://carrotsolutions.com.au/</PackageProjectUrl>
+		<PackageTags>Dynamicweb dw10 addin commerce</PackageTags>
+		<Product>Dynamicweb CMS</Product>
+    <Company>Carrot Solutions</Company>
+    <Authors>Carrot Solutions</Authors>
+		<Copyright>Copyright © 2025 Carrot Solutions Pty Ltd</Copyright>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	</PropertyGroup>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CyberSource.Rest.Client.Core" Version="0.0.1.26" />
+    <PackageReference Include="Dynamicweb.Core" Version="10.13.8" />
+    <PackageReference Include="Dynamicweb.DataIntegration" Version="10.13.8" />
+    <PackageReference Include="Dynamicweb.Ecommerce" Version="10.13.8" />
+    <PackageReference Include="Dynamicweb.Frontend.Classic" Version="10.13.8" />
+    <PackageReference Include="Dynamicweb.Products.UI" Version="10.13.8" />
+    <PackageReference Include="UAParser.Core" Version="4.0.4" />
+  </ItemGroup>
+</Project>
