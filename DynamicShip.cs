@@ -88,6 +88,9 @@ namespace Dynamicweb.MMT.Custom.Shipping
                     {
                         if (DebugLog) _logger.Info($"Rate found: {rateJson}:");
                         selectShippingRate = rateObject;
+                        order.ShippingMethod = rateObject.Carrier_Name + " - " + rateObject.Service;
+                        order.ShippingMethodAgentCode = rateObject.Shipping_Agent_Code;
+                        order.ShippingMethodAgentServiceCode = rateObject.Shipping_Agent_Service_Code;
                         break;
                     }
                 }
@@ -105,7 +108,7 @@ namespace Dynamicweb.MMT.Custom.Shipping
                 order.ShippingProviderErrors.Add(ex.Message);
 
                 if (DebugLog) _logger.Info(ex.Message);
-                if (DebugLog) _logger.Info(ex.StackTrace);
+                if (DebugLog) _logger.Info(ex.StackTrace ?? "");
             }
             return new PriceRaw(0, order.Currency);
             //return null;

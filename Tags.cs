@@ -40,11 +40,10 @@ namespace Dynamicweb.MMT.Custom.Shipping
         public const string ShippingServices = "ShippingServices";
 
         public const string ServiceCarrierName = "ServiceCarrierName";
-        public const string ServiceCarrierCode = "ServiceCarrierCode";
+        public const string AgentCode = "AgentCode";
+        public const string AgentServiceCode = "AgentServiceCode";
         public const string ServiceDescription = "ServiceDescription";
-        public const string ServiceProductCode = "ServiceProductCode";
-        public const string ServiceServiceCodes = "ServiceServiceCodes";
-        public const string Serviceprice = "Serviceprice";
+        public const string ServicePrice = "ServicePrice";
         public const string DeliveryTime = "DeliveryTime";
         #endregion
 
@@ -98,9 +97,9 @@ namespace Dynamicweb.MMT.Custom.Shipping
         {
             servicesLoop.SetTag(IsSelectedCarrier, isSelected);
             servicesLoop.SetTag(ServiceCarrierName, rate.Carrier_Name);
-            servicesLoop.SetTag(ServiceCarrierCode, rate.Shipping_Agent_Code);
             servicesLoop.SetTag(ServiceDescription, rate.Service);
-            servicesLoop.SetTag(ServiceProductCode, rate.Shipping_Agent_Service_Code);
+            servicesLoop.SetTag(AgentCode, rate.Shipping_Agent_Code);
+            servicesLoop.SetTag(AgentServiceCode, rate.Shipping_Agent_Service_Code);
             servicesLoop.SetTag("ServiceId", rate.ID);
 
             var currency = Services.Currencies.GetCurrency(order.CurrencyCode);
@@ -116,7 +115,7 @@ namespace Dynamicweb.MMT.Custom.Shipping
                 IsInformative = true
             };
             price = price.ToPrice(order.Currency);
-            Ecommerce.Frontend.Renderer.RenderPriceInfo(price, servicesLoop, Serviceprice);
+            Ecommerce.Frontend.Renderer.RenderPriceInfo(price, servicesLoop, ServicePrice);
 
             try
             {

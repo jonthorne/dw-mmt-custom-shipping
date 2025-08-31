@@ -8,7 +8,7 @@
 {
 	foreach (LoopItem service in ShippingServices)
 	{
-		string priceFormatted = !string.IsNullOrEmpty(service.GetString("Serviceprice.PriceFormatted")) ? service.GetString("Serviceprice.PriceFormatted") : Translate("Not specified");
+		string priceFormatted = !string.IsNullOrEmpty(service.GetString("ServicePrice.PriceFormatted")) ? service.GetString("ServicePrice.PriceFormatted") : Translate("Not specified");
 		string radioName = string.Format("{0}{1}", GetString("FieldPrefix"), "ShipmondoCarrierProductCode");
 		string radioId = string.Format("{0}{1}", radioName, service.GetString("ServiceProductCode"));
 		string radioValue = service.GetString("ServiceProductCode");
